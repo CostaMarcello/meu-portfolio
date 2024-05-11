@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio pessoal</title>
+    <style>
+        body{
+            background-color: #F2A71B;
+            color: #3c3c3c;
+            font-family:Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: justify;            
+        }
+        header{
+            background-color: #F2A71B
+            color: #3c3c3c;
+            padding: 10px;
+            text-align: center;
+        }
+        nav{
+           background-color: #3c3c3c;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a{
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+        }
+        section{
+            display: none;
+            padding: 20px;
+
+        }
+        footer{
+            background-color: #3c3c3c;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Formulário mensagem*/
+        form{
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+        }
+        label{
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea{
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #3c3c3c;
+            border-radius: 10px;
+            font-size: 16px;            
+        }
+        textarea{
+            resize: vertical;
+        }
+        input[type="submit"]{
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover{
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfólio</h1>
+        </header>
+    <nav>
+        <a href="#" class="link" data-target="sobre">Sobre min</a>
+        <a href="#" class="link" data-target="formacao">Formação</a>
+        <a href="#" class="link" data-target="portfolio">Portfólio</a>
+        <a href="#" class="link" data-target="contato">Contato</a>
+    </nav>
+    <section id="sobre">
+        
+        <h2>Bem-vindo(a)</h2> 
+
+        <div class="container">
+            <p>Sou José Marcelo Costa,
+            <p>Sou um entusiasta da tecnologia apaixonado por transformar ideias em soluções
+            práticas e inovadoras. Atualmente, estou cursando Análise e Desenvolvimento de
+            Sistemas, onde tenho a oportunidade de explorar meu interesse em programação e
+            desenvolvimento de software.</p>
+            <p>Ao longo da minha jornada acadêmica, tenho buscado constantemente aprimorar
+            minhas habilidades técnicas e criativas. Além dos estudos formais, tenho
+            dedicado tempo para aperfeiçoar meu domínio em ferramentas de design gráfico,
+            como Photoshop e CorelDRAW, e em edição de vídeo com o Adobe Premiere.</p>
+            <p>Meu objetivo é aplicar meu conhecimento e experiência para criar soluções
+            digitais que não apenas atendam às necessidades dos usuários, mas também
+            proporcionem experiências memoráveis e impactantes. Estou sempre em busca
+            de novos desafios e oportunidades para aprender e crescer profissionalmente.</p>
+            <p>Fora do ambiente acadêmico, gosto de explorar novas tecnologias, assistir a
+            tutoriais online e participar de comunidades relacionadas à minha área de atuação.
+            Acredito que o aprendizado contínuo e a colaboração são fundamentais para o
+            sucesso no mundo da tecnologia.</p>
+            <p>Estou entusiasmado com as possibilidades que o futuro reserva e ansioso para
+            contribuir de forma significativa para projetos inovadores e inspiradores.</p>
+            </div>
+            
+    </section>
+    <section id="formacao">
+        <h2>Formação</h2>
+        <p>Atualmente estou cursando Análise e Desenvolvimento de Sistemas, uma jornada que tem ampliado minha compreensão e
+        habilidades no universo da tecnologia da informação. Além disso, busco constantemente aprimorar minhas competências através de cursos práticos,
+        incluindo Adobe Photoshop, CorelDRAW e Adobe Premiere. Esses cursos complementares têm me capacitado a criar e editar conteúdo visual de forma profissional,
+        agregando valor aos projetos em que me envolvo..</p>
+    </section>
+    <section id="portfolio">
+        <h2>Portfólio</h2>
+        <a href="https://drive.google.com/drive/folders/0B6X3s8tkxAY4cjZnTGljcExOX0E?resourcekey=0-Ikz-ruV8Bio6NG3Yg6zoQQ&usp=drive_link">Meus projetos em Corel e Photoshop</a>
+    </section>
+    <section id="contato">
+        <h2>Contato</h2>
+        <form action="#" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+    <footer>
+        <p>Desenvolvido por José Marcelo Costa &copy; 2024</p>
+    </footer>
+    <script>
+        // Exibe a seção correspondente ao clicar no link do menu
+        const links = document.querySelectorAll('.link')
+        const sections = document.querySelectorAll('section')
+
+        links.forEach(link =>{
+            link.addEventListener('click',function(e){
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                sections.forEach(section =>{
+                    section.style.display = 'none';
+                });
+                document.getElementById(targetId).style.display ='block' 
+            });
+        });
+        //Exibe "Sobre min" ao carregar a página
+        document.getElementById('sobre').style.display = 'block';
+    </script>
+</body>
+</html>
