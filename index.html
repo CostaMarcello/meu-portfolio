@@ -15,7 +15,7 @@
             text-align: justify;            
         }
         header{
-            background-color: #F2A71B
+            background-color: #F2A71B;
             color: #3c3c3c;
             padding: 10px;
             text-align: center;
@@ -130,7 +130,7 @@
     </section>
     <section id="contato">
         <h2>Contato</h2>
-        <form action="#" method="post">
+        <form action="https://api.staticforms.xyz/submit" method="post">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -139,6 +139,9 @@
 
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+            <input type="hidden" name="accessKey" value="eb2b28d3-5ba0-42f7-af32-405781d994fd">
+            <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/obrigado.html">
 
             <input type="submit" value="Enviar">
         </form>
